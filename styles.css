@@ -1,0 +1,232 @@
+body {
+  font-family: 'Roboto', Arial, Sans-Serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #e37042;
+}
+
+.block-tile {
+  display: flex;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.tile-content {
+  display: flex;
+  flex-grow: 1;
+}
+
+.block-tile img {
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 20px;
+  width: 100%;
+}
+
+.tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-socket-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.quarter-width {
+  width: 25%;
+}
+
+.third-width {
+  width: 33.33%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.two-thirds-width {
+  width: 66.66%;
+}
+
+.three-quarters-width {
+  width: 75%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.centered-row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  gap: 20px;
+}
+
+.centered-column-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1100px;
+  gap: 20px;
+}
+
+input[type=text],input[type=password],input[type=number],select,textarea {
+  border: 1px solid #999999;
+  border-radius: 5px;
+  min-width: 50px;
+}
+
+input[type=text]:focus,input[type=password]:focus,input[type=number]:focus,select:focus,textarea:focus {
+  border-color: #00a5e5;
+  outline-color: #00a5e5;
+}
+
+input[type=text].error:focus,input[type=password].error:focus,input[type=number].error:focus,select.error:focus,textarea.error:focus {
+  border-color: #ff0000;
+  outline-color: #ff0000;
+}
+
+input[type=text].warning:focus,input[type=password].warning:focus,input[type=number].warning:focus,select.warning:focus,textarea.warning:focus {
+  border-color: #ee9900;
+  outline-color: #ee9900;
+}
+
+input[type=text].success:focus,input[type=password].success:focus,input[type=number].success:focus,select.success:focus,textarea.success:focus {
+  border-color: #009900;
+  outline-color: #009900;
+}
+
+input[type=text],input[type=password],input[type=button],input[type=submit],input[type=number],textarea {
+  padding: 10px;
+  font-size: 18px;
+  max-width: 400px;
+}
+
+input[type=button],input[type=submit] {
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  border: 0;
+  padding: 10px;
+}
+
+input.long-input {
+  max-width: 500px;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.passphrase-container input {
+  max-width: 107px;
+}
+
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.passphrase-container {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+capitalisk-passphrase-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.log-in-form .form-panel label,.log-in-form .form-panel input[type=checkbox],.multisig-indicator {
+  vertical-align: middle;
+}
+
+.multisig-indicator.spinning {
+  display: inline-block;
+}
+
+.spinning {
+  animation: spin 1s infinite linear;
+}
+
+.loading-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #cccccc;
+  font-size: 70px;
+  box-sizing: border-box;
+}
+
+.multisig-indicator.error {
+  color: #ff0000;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+input[type=submit] {
+  max-width: 250px;
+}
+
+input[type=submit]:not(input[disabled]) {
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .tile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .quarter-width {
+    width: 100%;
+  }
+
+  .third-width {
+    width: 100%;
+  }
+
+  .half-width {
+    width: 100%;
+  }
+
+  .two-thirds-width {
+    width: 100%;
+  }
+
+  .three-quarters-width {
+    width: 100%;
+  }
+}

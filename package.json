@@ -1,0 +1,15 @@
+{
+  "name": "socketcluster",
+  "version": "1.0.0",
+  "description": "My natural clinic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jonathan Gros-Dubois",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "saasufy-components": "^3.38.0",
+    "socketcluster-client": "^19.1.0"
+  }
+}

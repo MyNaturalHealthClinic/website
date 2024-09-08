@@ -29,7 +29,7 @@
         return `display: flex; flex-direction: ${
           section.direction || 'row'
         }; width: 100%; background-color: ${
-          section.backgroundColor || 'none'
+          section.backgroundColor || 'inherit'
         }; min-height: ${
           section.minHeight || 'auto'
         }; max-height: ${
@@ -52,7 +52,7 @@
       }
 
       function getExtraClasses(section) {
-        return ` ${section.hideOnMobile ? 'mobile-hidden' : ''}`;
+        return `${section.hideOnMobile ? ' mobile-hidden' : ''}${section.fullWidthImages ? ' full-container' : ''}`;
       }
     </script>
   </head>
@@ -70,7 +70,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"

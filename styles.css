@@ -22,6 +22,10 @@ a {
   max-width: 100%;
 }
 
+.full-container img {
+  width: 100%;
+}
+
 .tile-content {
   display: flex;
   flex-grow: 1;

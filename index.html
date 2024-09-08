@@ -84,13 +84,13 @@
                   trim-spaces
                 >
                   <template slot="content" name="image">
-                    <div class="content-container image-container-full{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
+                    <div class="content-container{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
                       <img src="{{Section.imageURL}}" alt="{{Section.imageDesc}}" />
                     </div>
                   </template>
 
                   <template slot="content" name="image-link">
-                    <div class="content-container image-container-full{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
+                    <div class="content-container{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
                       <a href="{{Section.imageLinkURL}}"><img src="{{Section.imageURL}}" alt="{{Section.imageDesc}}" /></a>
                     </div>
                   </template>

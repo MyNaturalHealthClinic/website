@@ -17,7 +17,7 @@
     <script type="application/javascript">
       let mdConverter = new showdown.Converter();
       function toHTML(markdown) {
-        let html = mdConverter.makeHtml(markdown);
+        let html = mdConverter.makeHtml(markdown || '');
         let pTags = html.match(/<p>/g) || [];
         if (html.startsWith('<p>') && html.endsWith('</p>') && pTags.length < 2) {
           return html.slice(3, -4);
@@ -33,7 +33,7 @@
         }; min-height: ${
           section.minHeight || 'auto'
         }; max-height: ${
-          section.maxHeight || 'auto'
+          section.maxHeight || 'none'
         }; font-size: ${
           section.fontSize || 'inherit'
         }; text-align: ${
@@ -42,6 +42,10 @@
           section.alignMain || 'flex-start'
         }; align-items: ${
           section.alignCross || 'flex-start'
+        }; padding: ${
+          section.padding || 'inherit'
+        };${
+          section.margin == null ? '' : ` margin: ${section.margin};`
         }`;
       }
     </script>
@@ -60,7 +64,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,alignMain,alignCross"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"
@@ -70,7 +74,7 @@
                 <switch-group
                   class="{{Section.width}}-width block-tile"
                   show-cases="{{Section.type}}=true"
-                  style="font-weight: {{Section.fontWeight || 'inherit'}}; color: {{Section.fontColor || 'inherit'}};{{Section.padding ? ` padding: ${Section.padding};` : ''}}"
+                  style="font-weight: {{Section.fontWeight || 'inherit'}}; color: {{Section.fontColor || 'inherit'}}"
                   trim-spaces
                 >
                   <template slot="content" name="image">
@@ -98,7 +102,7 @@
                   </template>
 
                   <template slot="content" name="empty">
-                    <div style="width: 100%; background-color: {{Section.backgroundColor || 'none'}}; min-height: {{Section.minHeight || 'auto'}}; max-height: {{Section.maxHeight || 'auto'}}"></div>
+                    <div style="width: 100%; background-color: {{Section.backgroundColor || 'none'}}; min-height: {{Section.minHeight || 'auto'}}; max-height: {{Section.maxHeight || 'none'}}"></div>
                   </template>
 
                   <div slot="viewport" class="tile-content" style="justify-content: stretch; align-items: flex-start"></div>

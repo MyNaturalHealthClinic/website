@@ -12,7 +12,10 @@ a {
 .block-tile {
   display: flex;
   box-sizing: border-box;
-  padding: 20px;
+}
+
+.content-container {
+  margin: 20px;
 }
 
 .tile-content {

@@ -48,6 +48,10 @@
           section.margin == null ? '' : ` margin: ${section.margin};`
         }`;
       }
+
+      function getExtraClasses(section) {
+        return ` ${section.hideOnMobile ? 'mobile-hidden' : ''}`;
+      }
     </script>
   </head>
   <body>
@@ -64,7 +68,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,hideOnMobile"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"
@@ -78,31 +82,31 @@
                   trim-spaces
                 >
                   <template slot="content" name="image">
-                    <div class="content-container image-container-full" style="{{getStyle(Section)}}">
+                    <div class="content-container image-container-full{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
                       <img src="{{Section.imageURL}}" alt="{{Section.imageDesc}}" />
                     </div>
                   </template>
 
                   <template slot="content" name="image-link">
-                    <div class="content-container image-container-full" style="{{getStyle(Section)}}">
+                    <div class="content-container image-container-full{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
                       <a href="{{Section.imageLinkURL}}"><img src="{{Section.imageURL}}" alt="{{Section.imageDesc}}" /></a>
                     </div>
                   </template>
 
                   <template slot="content" name="button-link">
-                    <div class="content-container" style="{{getStyle(Section)}}">
+                    <div class="content-container{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
                       <a href="{{Section.buttonLinkURL}}"><input type="button" value="{{Section.buttonText}}" /></a>
                     </div>
                   </template>
 
                   <template slot="content" name="text">
-                    <div class="content-container text-container" style="{{getStyle(Section)}}">
+                    <div class="content-container text-container{{getExtraClasses(Section)}}" style="{{getStyle(Section)}}">
                       {{{toHTML(Section.text)}}}
                     </div>
                   </template>
 
                   <template slot="content" name="empty">
-                    <div style="width: 100%; background-color: {{Section.backgroundColor || 'none'}}; min-height: {{Section.minHeight || 'auto'}}; max-height: {{Section.maxHeight || 'none'}}"></div>
+                    <div class="content-container{{getExtraClasses(Section)}}" style="width: 100%; background-color: {{Section.backgroundColor || 'none'}}; min-height: {{Section.minHeight || 'auto'}}; max-height: {{Section.maxHeight || 'none'}}"></div>
                   </template>
 
                   <div slot="viewport" class="tile-content" style="justify-content: stretch; align-items: flex-start"></div>

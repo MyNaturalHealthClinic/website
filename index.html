@@ -74,25 +74,25 @@
                   trim-spaces
                 >
                   <template slot="content" name="image">
-                    <div class="image-container-full" style="{{getStyle(Section)}}">
+                    <div class="content-container image-container-full" style="{{getStyle(Section)}}">
                       <img src="{{Section.imageURL}}" alt="{{Section.imageDesc}}" />
                     </div>
                   </template>
 
                   <template slot="content" name="image-link">
-                    <div class="image-container-full" style="{{getStyle(Section)}}">
+                    <div class="content-container image-container-full" style="{{getStyle(Section)}}">
                       <a href="{{Section.imageLinkURL}}"><img src="{{Section.imageURL}}" alt="{{Section.imageDesc}}" /></a>
                     </div>
                   </template>
 
                   <template slot="content" name="button-link">
-                    <div style="{{getStyle(Section)}}">
+                    <div class="content-container" style="{{getStyle(Section)}}">
                       <a href="{{Section.buttonLinkURL}}"><input type="button" value="{{Section.buttonText}}" /></a>
                     </div>
                   </template>
 
                   <template slot="content" name="text">
-                    <div style="{{getStyle(Section)}}">
+                    <div class="content-container text-container" style="{{getStyle(Section)}}">
                       {{{toHTML(Section.text)}}}
                     </div>
                   </template>

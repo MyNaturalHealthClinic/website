@@ -44,8 +44,10 @@
           section.alignCross || 'flex-start'
         }; padding: ${
           section.padding || 'inherit'
-        };${
-          section.margin == null ? '' : ` margin: ${section.margin};`
+        }${
+          section.margin == null ? '' : `; margin: ${section.margin}`
+        }${
+          section.contentSpacing == null ? '' : `; gap: ${section.contentSpacing}`
         }`;
       }
 
@@ -68,7 +70,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,hideOnMobile"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"

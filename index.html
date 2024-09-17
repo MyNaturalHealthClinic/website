@@ -32,6 +32,8 @@
           section.backgroundColor || 'inherit'
         }; background-image: ${
           section.backgroundImage || 'none'
+        }; background-position: ${
+          section.backgroundPosition || 'center'
         }; min-height: ${
           section.minHeight || 'auto'
         }; max-height: ${
@@ -72,7 +74,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"

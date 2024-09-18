@@ -46,6 +46,8 @@
           section.alignMain || 'flex-start'
         }; align-items: ${
           section.alignCross || 'flex-start'
+        }; word-break: ${
+          section.wordBreak || 'normal'
         }${
           section.padding == null ? '' : `; padding: ${section.padding}`
         }${
@@ -74,7 +76,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages,wordBreak"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"

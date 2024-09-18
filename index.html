@@ -46,8 +46,8 @@
           section.alignMain || 'flex-start'
         }; align-items: ${
           section.alignCross || 'flex-start'
-        }; padding: ${
-          section.padding || 'inherit'
+        }${
+          section.padding == null ? '' : `; padding: ${section.padding}`
         }${
           section.margin == null ? '' : `; margin: ${section.margin}`
         }${

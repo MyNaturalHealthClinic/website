@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="https://saasufy.com/node_modules/saasufy-components/socket.js" type="module"></script>
     <script src="https://saasufy.com/node_modules/saasufy-components/app-router.js" type="module"></script>
+    <script src="https://saasufy.com/node_modules/saasufy-components/model-viewer.js" type="module" defer></script>
     <script src="https://saasufy.com/node_modules/saasufy-components/collection-viewer.js" type="module" defer></script>
     <script src="https://saasufy.com/node_modules/saasufy-components/switch-group.js" type="module" defer></script>
     <script src="scripts/showdown.min.js"></script>
@@ -54,6 +55,8 @@
           section.margin == null ? '' : `; margin: ${section.margin}`
         }${
           section.contentSpacing == null ? '' : `; gap: ${section.contentSpacing}`
+        }${
+          section.customStyling == null ? '' : `; ${section.customStyling}`
         }`;
       }
 
@@ -65,6 +68,18 @@
   <body>
     <div class="main-container">
       <socket-provider class="main-socket-container" url="wss://au.saasufy.com/sid8002/socketcluster/">
+        <model-viewer
+          model-type="Style"
+          model-id="5ab091e9-77af-4dc3-958e-a192cd833c1f"
+          model-fields="css"
+        >
+          <template slot="item">
+            <style>
+              {{{Style.css}}}
+            </style>
+          </template>
+          <div slot="viewport"></div>
+        </model-viewer>
         <app-router class="centered-column-container" default-page="/not-found">
 
           <template slot="page" route-path="/not-found">
@@ -76,7 +91,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages,wordBreak"
+              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages,wordBreak,customStyling"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"

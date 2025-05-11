@@ -91,7 +91,7 @@
           <template slot="page" route-path="/:page">
             <collection-viewer
               collection-type="Section"
-              collection-fields="type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages,wordBreak,customStyling"
+              collection-fields="name,type,direction,width,minHeight,maxHeight,text,textLinkURL,links,imageURL,imageDesc,imageLinkURL,buttonText,buttonLinkURL,backgroundColor,backgroundImage,backgroundPosition,fontSize,textAlign,fontWeight,fontColor,padding,margin,alignMain,alignCross,contentSpacing,hideOnMobile,fullWidthImages,wordBreak,customStyling"
               collection-view="page"
               collection-view-params="pageName={{page}}"
               collection-page-size="50"
@@ -99,7 +99,7 @@
               <template slot="item">
 
                 <switch-group
-                  class="{{Section.width}}-width block-tile"
+                  class="{{Section.name}}-section {{Section.width}}-width block-tile"
                   show-cases="{{Section.type}}=true"
                   style="font-weight: {{Section.fontWeight || 'inherit'}}; color: {{Section.fontColor || 'inherit'}}"
                   trim-spaces
